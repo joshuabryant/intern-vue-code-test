@@ -1,7 +1,12 @@
 html {
-  --color-brand: #fff200;
   --color-black: #000000;
   --color-gray: #444444;
+  --color-gray-light: #cccccc;
+  --color-gray-lightest: #eeeeee;
+
+  --color-brand: #fff200;
+  --color-border: var(--color-gray-light);
+  --color-background: var(--color-gray-lightest);
 
   --font-sans: 'Work Sans', sans-serif;
 
