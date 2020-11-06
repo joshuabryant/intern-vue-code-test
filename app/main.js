@@ -1,15 +1,19 @@
 (() => {
   // Define components.
-  Vue.component('message-item', {
-    props: ['message'],
-    template: '<div>{{ message }}</div>',
+  Vue.component('resume-base', {
+    props: ['resume'],
+    template: '<pre>{{ resume }}</pre>',
   });
 
   // Instantiate the app.
   const app = new Vue({
     el: '#app',
     data: {
-      message: 'Good luck!',
+      resume: null,
+      api: 'https://wip.journeygroup.com/intern-api/joshbryant.json',
+    },
+    async created() {
+      this.resume = await fetch(this.api).then((response) => response.json());
     },
   });
 })();
