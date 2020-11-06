@@ -35,6 +35,7 @@ body {
 }
 
 .resume__header .resume__photo {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   height: 300px;
   margin: 0 auto 20px;
@@ -47,6 +48,8 @@ body {
   display: block;
   height: 100%;
   object-fit: cover;
+  position: relative;
+  z-index: -1;
   width: 100%;
 }
 
