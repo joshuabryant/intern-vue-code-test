@@ -1,12 +1,12 @@
 # Code Sample for Internship Applicants
 
-This small project will produce a Vue.js-powered resume.
+This small project will produce a Vue.js-powered résumé.
 
 ## Installation
 
 1. Fork this repository, cloning your fork to your computer for editing.
 2. Open `index.html` directly in your browser.
-3. Edit the repository files to build a resume modeled on the design file (will be emailed to you).
+3. Edit the repository files to build a résumé modeled on the design file (will be emailed to you).
 4. Tackle the work in small tasks, making frequent commits to describe your progress.
 5. Once finished, share your fork with us.
 
