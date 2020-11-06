@@ -14,6 +14,7 @@
       <img v-if="resume.photo" :src="resume.photo" alt="resume.name"/>
       <h1>{{ resume.name }}</h1>
       <resume-contact-info :resume="resume" />
+      <links-list :resume="resume" />
     </div>`,
   });
 
@@ -26,7 +27,19 @@
           <a :href="'mailto:' + resume.email">{{ resume.email }}</a>
         </li>
         <li v-if="resume.phone">
-          <a :href="'tel:+1' + resume.phone.replace('.', '')">{{ resume.phone }}</a>
+          <a :href="'tel:+1' + resume.phone.replace(/\\./g, '')">{{ resume.phone }}</a>
+        </li>
+      </ul>
+    </div>`,
+  });
+
+  Vue.component('links-list', {
+    props: ['resume', 'heading'],
+    template: `<div v-if="resume" class="links-list">
+      <h2 class="sr-only">{{ heading || 'Links' }}</h2>
+      <ul class="links-list__list">
+        <li v-for="(link, i) in resume.links" :key="'link-' + i">
+          <a :href="link">{{ link.replace(/^https?:\\/\\//, '') }}</a>
         </li>
       </ul>
     </div>`,
