@@ -1,6 +1,19 @@
+html {
+  --color-brand: #fff200;
+  --color-black: #000000;
+  --color-gray: #444444;
+
+  --font-sans: 'Work Sans', sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-heavy: 800;
+}
+
 body {
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 400; /* Available weights: 400, 600, 800 */
+  color: var(--color-gray);
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-regular);
 }
 
 
@@ -12,5 +25,5 @@ body {
 
 
 
-/* Colors */
+/* Other */
 
