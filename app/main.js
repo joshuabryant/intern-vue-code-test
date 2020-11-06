@@ -10,14 +10,15 @@
       <resume-section heading="Work">
         <resume-work :resume="resume" />
       </resume-section>
-      <pre>{{ resume }}</pre>
     </div>`,
   });
 
   Vue.component('resume-header', {
     props: ['resume'],
     template: `<div v-if="resume" class="resume__header">
-      <img v-if="resume.photo" :src="resume.photo" :alt="'Photo of ' + resume.name"/>
+      <div v-if="resume.photo" class="resume__photo">
+        <img :src="resume.photo" :alt="'Photo of ' + resume.name"/>
+      </div>
       <h1>{{ resume.name }}</h1>
 
       <resume-contact-info :resume="resume" />
@@ -62,11 +63,11 @@
 
   Vue.component('resume-education', {
     props: ['resume'],
-    template: `<ul v-if="resume && resume.education">
-        <li v-for="(ed, j) in resume.education" :key="'edu-' + j">
+    template: `<ul v-if="resume && resume.education" class="ed-list">
+        <li v-for="(ed, j) in resume.education" :key="'edu-' + j" class="degree">
           <h3>{{ ed.school }}</h3>
-          <div>{{ ed.degree }}</div>
-          <div>{{ ed.year }}</div>
+          <div class="degree__name">{{ ed.degree }}</div>
+          <div class="degree__year">{{ ed.year }}</div>
         </li>
       </ul>`,
   });
@@ -74,19 +75,17 @@
   Vue.component('resume-work', {
     props: ['resume'],
     template: `<ul v-if="resume && resume.work">
-        <li v-for="(job, k) in resume.work" :key="'work-' + k">
-          <div>
-            <h3>{{ job.jobtitle }}</h3>
-            <div v-if="job.company && job.company.name">
-              <img v-if="job.company.logo" :src="job.company.logo" :alt="job.company.name + ' logo'" />
-              <h4>
-                <a v-if="job.company.website" :href="job.company.website">{{ job.company.name }}</a>
-                <span v-else>{{ job.company.name }}</span>
-              </h4>
-            </div>
-            <div>{{ job.time }}</div>
-            <div>{{ job.description }}</div>
+        <li v-for="(job, k) in resume.work" :key="'work-' + k" class="job">
+          <h3>{{ job.jobtitle }}</h3>
+          <div v-if="job.company && job.company.name" class="job__company">
+            <img v-if="job.company.logo" :src="job.company.logo" :alt="job.company.name + ' logo'" />
+            <h4>
+              <a v-if="job.company.website" :href="job.company.website">{{ job.company.name }}</a>
+              <span v-else>{{ job.company.name }}</span>
+            </h4>
           </div>
+          <div class="job__time">{{ job.time }}</div>
+          <div class="job__description">{{ job.description }}</div>
         </li>
       </ul>`,
   });

@@ -1,7 +1,12 @@
 html {
-  --color-brand: #fff200;
   --color-black: #000000;
   --color-gray: #444444;
+  --color-gray-light: #cccccc;
+  --color-gray-lightest: #eeeeee;
+  
+  --color-brand: #fff200;
+  --color-border: var(--color-gray-light);
+  --color-background: var(--color-gray-lightest);
 
   --font-sans: 'Work Sans', sans-serif;
 
@@ -18,12 +23,160 @@ body {
 
 
 /* Layout */
+body {
+  margin: 0 auto;
+  max-width: 70ch;
+  padding: 80px 40px;
+}
 
+.resume__header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.resume__header .resume__photo {
+  border-radius: 50%;
+  height: 300px;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+}
+
+.resume__header .resume__photo img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.resume__header ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.resume__header li {
+  margin: 5px 10px;
+}
+
+.section {
+  border-top: 1px solid var(--color-border);
+  padding: 40px 0;
+}
+
+.section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section li {
+  margin: 20px 0 40px;
+}
+
+.ed-list {
+  display: flex;
+}
+
+.ed-list li {
+  margin-left: 40px;
+  width: calc(50% - 20px);
+}
+
+.ed-list li:nth-child(odd) {
+  margin-left: 0;
+}
+
+.job__company {
+  align-items: center;
+  background-color: var(--color-background);
+  display: flex;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.job__company img {
+  display: block;
+  max-width: 160px;
+  margin-right: 20px;
+  outline: none;
+  width: 25%;
+}
 
 
 /* Type */
 
+h1 {
+  color: var(--color-black);
+  font-size: 3em;
+  font-weight: var(--font-weight-heavy);
+  margin: 10px 0;
+}
+
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  margin: 0;
+}
+
+.section h2 {
+  font-size: 1em;
+  font-weight: var(--font-weight-regular);
+}
+
+.degree h3,
+.job h3 {
+  color: var(--color-black);
+  font-size: 1.5em;
+  letter-spacing: -0.033em;
+}
+
+.job__time,
+.degree__name {
+  font-size: 1.125em;
+  letter-spacing: -0.033em;
+  margin-bottom: 10px;
+}
+
+.job__time {
+  color: var(--color-black);
+}
+
+.job__description {
+  font-size: 0.9375em;
+  letter-spacing: -0.033em;
+}
+
+a {
+  color: var(--color-black);
+  border-bottom: 2px solid var(--color-brand);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  border-bottom: 0;
+  color: var(--color-gray);
+}
+
 
 
 /* Other */
+
+.sr-only {
+  /* from Bootstrap */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
