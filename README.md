@@ -4,7 +4,7 @@ This small project will produce a Vue.js-powered résumé.
 
 ## Installation
 
-1. Fork this repository, cloning your fork to your computer for editing.
+1. Clone this repository to your computer, and remove the `.git` directory. Then create a new private repository at GitHub, and re-initialize your local repository to reference your new private repository. (Invite me to collaborate on your private repository!)
 2. Open `index.html` directly in your browser.
 3. Edit the repository files to build a résumé modeled on the design file (will be emailed to you).
 4. Tackle the work in small tasks, making frequent commits to describe your progress.
