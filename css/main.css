@@ -3,7 +3,7 @@ html {
   --color-gray: #444444;
   --color-gray-light: #cccccc;
   --color-gray-lightest: #eeeeee;
-  
+
   --color-brand: #fff200;
   --color-border: var(--color-gray-light);
   --color-background: var(--color-gray-lightest);
@@ -23,6 +23,7 @@ body {
 
 
 /* Layout */
+
 body {
   margin: 0 auto;
   max-width: 70ch;
